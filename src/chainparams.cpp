@@ -57,10 +57,10 @@ public:
 		// The message start string is designed to be unlikely to occur in normal data.
 		// The characters are rarely used upper ASCII, not valid as UTF-8, and produce
 		// a large 4-byte int at any alignment.
-		pchMessageStart[0] = 0x69;
-		pchMessageStart[1] = 0xfa;
-		pchMessageStart[2] = 0xcc;
-		pchMessageStart[3] = 0xfb;
+		pchMessageStart[0] = 0xb9;
+		pchMessageStart[1] = 0xba;
+		pchMessageStart[2] = 0xfb;
+		pchMessageStart[3] = 0x63;
 		vAlertPubKey = ParseHex("04accc420eabbb8a7106385003fef77896538a382a0dcc389ff45f3c98751d9af423a066689757666259351198a8a2a628a1fd644c3232678c5845384c744ff8d7");
 		nDefaultPort = 10060;
 		nRPCPort = 10061;
@@ -103,16 +103,17 @@ public:
 		base58Prefixes[EXT_PUBLIC_KEY] = list_of(0x04)(0x88)(0xB2)(0x1E).convert_to_container<std::vector<unsigned char> >();
 		base58Prefixes[EXT_SECRET_KEY] = list_of(0x04)(0x88)(0xAD)(0xE4).convert_to_container<std::vector<unsigned char> >();
 
-		vSeeds.push_back(CDNSSeedData("0", "104.207.134.111"));
-		vSeeds.push_back(CDNSSeedData("1", "208.167.248.53"));
-		vSeeds.push_back(CDNSSeedData("2", "144.202.15.52"));
+		vSeeds.push_back(CDNSSeedData("1", "104.207.134.111"));
+        	vSeeds.push_back(CDNSSeedData("2", "208.167.248.53"));
+        	vSeeds.push_back(CDNSSeedData("3", "144.202.15.52"));
+
 		convertSeeds(vFixedSeeds, pnSeed, ARRAYLEN(pnSeed), nDefaultPort);
 
 		nPoolMaxTransactions = 3;
 		//strSporkKey = "046f78dcf911fbd61910136f7f0f8d90578f68d0b3ac973b5040fb7afb501b5939f39b108b0569dca71488f5bbf498d92e4d1194f6f941307ffd95f75e76869f0e";
 		//strMasternodePaymentsPubKey = "046f78dcf911fbd61910136f7f0f8d90578f68d0b3ac973b5040fb7afb501b5939f39b108b0569dca71488f5bbf498d92e4d1194f6f941307ffd95f75e76869f0e";
 		strDarksendPoolDummyAddress = "ERaVnHZizkREBg6yBzcpy6TBLn4B5GbUva";
-		nLastPOWBlock = 5402;
+		nLastPOWBlock = 5500;
 		nPOSStartBlock = 5401;
 	}
 
@@ -139,10 +140,10 @@ public:
 		// The message start string is designed to be unlikely to occur in normal data.
 		// The characters are rarely used upper ASCII, not valid as UTF-8, and produce
 		// a large 4-byte int at any alignment.
-		pchMessageStart[0] = 0x1d;
-		pchMessageStart[1] = 0x7e;
-		pchMessageStart[2] = 0xa6;
-		pchMessageStart[3] = 0x2c;
+		pchMessageStart[0] = 0x4c;
+		pchMessageStart[1] = 0xaf;
+		pchMessageStart[2] = 0x2c;
+		pchMessageStart[3] = 0xe9;
 		bnProofOfWorkLimit = CBigNum(~uint256(0) >> 16);
 		vAlertPubKey = ParseHex("04a983220ea7a38a7106385003fef77896538a382a0dcc389cc45f3c98751d9af423a097789757556259351198a8aaa628a1fd644c3232678c5845384c744ff8d7");
 		nDefaultPort = 20114;
@@ -206,3 +207,4 @@ bool SelectParamsFromCommandLine() {
 	}
 	return true;
 }
+
